@@ -39,6 +39,11 @@ const CHAPTER_KEY = "rag-current-chapter";
 
 const FREE_CHAPTER_LIMIT = book.freeChapterLimit;
 
+// No checkout link means there's nothing to sell yet — don't lock content
+// behind a purchase flow that doesn't exist. Gating switches back on the
+// moment VITE_CHECKOUT_URL is set for launch.
+const GATING_ENABLED = Boolean(CHECKOUT_URL);
+
 const partIcon: Record<string, React.ReactNode> = {
   "PART 1 — WHY & WHAT": <Sparkles className="h-4 w-4" />,
   "PART 2 — QUICK WIN": <Timer className="h-4 w-4" />,
@@ -55,7 +60,8 @@ const EBookReader = () => {
   const navigate = useNavigate();
 
   const readPurchased = () => typeof window !== "undefined" && localStorage.getItem(PURCHASED_KEY) === "1";
-  const isIndexLocked = (index: number, purchased: boolean) => !purchased && index >= FREE_CHAPTER_LIMIT;
+  const isIndexLocked = (index: number, purchased: boolean) =>
+    GATING_ENABLED && !purchased && index >= FREE_CHAPTER_LIMIT;
 
   const getInitialChapter = (): number | null => {
     const purchased = readPurchased();
@@ -143,7 +149,7 @@ const EBookReader = () => {
   }, [id, hasPurchased]);
 
   const isChapterLocked = useCallback(
-    (index: number) => !hasPurchased && index >= FREE_CHAPTER_LIMIT,
+    (index: number) => GATING_ENABLED && !hasPurchased && index >= FREE_CHAPTER_LIMIT,
     [hasPurchased]
   );
 
@@ -189,7 +195,7 @@ const EBookReader = () => {
   );
 
   const handleDownloadPdf = useCallback(async () => {
-    if (!hasPurchased) {
+    if (GATING_ENABLED && !hasPurchased) {
       setShowBuyGate(true);
       return;
     }
@@ -381,14 +387,14 @@ const EBookReader = () => {
             >
               {isGeneratingPdf ? (
                 <Loader2 className="h-3.5 w-3.5 animate-spin" />
-              ) : !hasPurchased ? (
+              ) : GATING_ENABLED && !hasPurchased ? (
                 <Lock className="h-3.5 w-3.5" />
               ) : (
                 <Download className="h-3.5 w-3.5" />
               )}
               {isGeneratingPdf
                 ? "Generating…"
-                : hasPurchased
+                : !GATING_ENABLED || hasPurchased
                 ? "Download Full PDF"
                 : PRICE_DISPLAY
                 ? `Get PDF — $${PRICE_DISPLAY}`

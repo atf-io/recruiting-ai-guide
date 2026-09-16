@@ -8,6 +8,8 @@ A paid digital guide for boutique and independent recruiting agencies — where 
 
 Vite + React 18 + TypeScript + Tailwind + shadcn/ui + Framer Motion + react-router-dom. One-click PDF export via `html2canvas` + `jspdf`. Purchase gating and email capture via `localStorage`, no backend.
 
+**Gating is currently off.** `GATING_ENABLED` in `EBookReader.tsx` is `Boolean(VITE_CHECKOUT_URL)` — with no checkout URL configured, every chapter and the PDF are open to any visitor (this is the state for review, before there's a real product to sell). The moment `VITE_CHECKOUT_URL` and `VITE_PURCHASE_TOKEN` are set for launch, the paywall re-enables automatically — no code change needed.
+
 Chapters are **data-driven**: `src/data/agencyGuideChapters.ts` holds title/subtitle/part/HTML body for every chapter, rendered generically by `src/components/ebook/ChapterBody.tsx`. There is no per-chapter component file — add or edit a chapter by editing that one data file.
 
 ## Architecture
@@ -33,7 +35,7 @@ npm run test
 
 ## Manual steps before this can go live
 
-1. **Lemon Squeezy product.** This guide needs its own LS product and checkout link — it is not the same purchase as the voice-agents guide. Create it in the Lemon Squeezy dashboard, then set `VITE_CHECKOUT_URL` and `VITE_PURCHASE_TOKEN` (matching the LS success-URL token).
+1. **Lemon Squeezy product.** This guide needs its own LS product and checkout link — it is not the same purchase as the voice-agents guide. Create it in the Lemon Squeezy dashboard, then set `VITE_CHECKOUT_URL` and `VITE_PURCHASE_TOKEN` (matching the LS success-URL token). This is also what turns the paywall back on — see "Gating is currently off" above.
 2. **Price.** Not yet decided. `VITE_PRICE_DISPLAY` is left blank; the UI reads that and shows "Get the Guide" / "Price coming soon" instead of a number until it's set.
 3. **OG image.** `index.html` references `/og-image.png`, which doesn't exist yet in `public/` — generate one before sharing links publicly (a 1200×630 card with the cover title/tagline).
 4. **Domain / canonical URL.** `index.html` has no `og:url`/canonical tag yet since the deploy domain isn't chosen. Add those once it's live.
