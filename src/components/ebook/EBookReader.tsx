@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { book, chapters, lastChapter, groupByPart, type ChapterMeta } from "@/data/agencyGuideChapters";
 import ChapterBody from "./ChapterBody";
+import StackBuilder from "./StackBuilder";
 
 // Commerce + integration config — see .env.example
 const CHECKOUT_URL = import.meta.env.VITE_CHECKOUT_URL || "";
@@ -533,8 +534,13 @@ const EBookReader = () => {
                 </div>
               </div>
 
+              {/* Interactive budget-based stack recommender */}
+              <div className="mt-4">
+                <StackBuilder />
+              </div>
+
               {/* Chapter grid, grouped by part */}
-              <div className="mx-auto max-w-5xl px-6 pb-20 mt-4">
+              <div className="mx-auto max-w-5xl px-6 pb-20 mt-16">
                 <h2 className="mb-8 text-center font-heading text-2xl font-bold text-foreground">What's Inside</h2>
 
                 {partGroups.map((group) => (
