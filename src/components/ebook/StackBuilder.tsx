@@ -28,7 +28,7 @@ const TIERS: BudgetTier[] = [
     range: "$15-19/mo",
     blurb: "You're on spreadsheets and want the one system everything else will eventually plug into, without adding real spend yet.",
     lines: [
-      { juncture: "Core ATS/CRM", tool: "Manatal Professional", price: "$15-19/mo", chapter: 9 },
+      { juncture: "Core ATS/CRM", tool: "Manatal Professional", price: "$15-19/mo", chapter: 10 },
       { juncture: "Sourcing", tool: "Juicebox, free tier", price: "$0", chapter: 5 },
       { juncture: "Business development", tool: "Claude + manual search", price: "$0", chapter: 4 },
       { juncture: "Interview intelligence", tool: "Metaview, free tier", price: "$0", chapter: 7 },
@@ -41,7 +41,7 @@ const TIERS: BudgetTier[] = [
     range: "$185-260/mo",
     blurb: "The budget tier from Chapter 2: a full juncture-by-juncture stack for a single-recruiter desk, still under the cost of a fraction of one placement fee.",
     lines: [
-      { juncture: "Core ATS/CRM", tool: "Manatal Professional", price: "$15-19/mo", chapter: 9 },
+      { juncture: "Core ATS/CRM", tool: "Manatal Professional", price: "$15-19/mo", chapter: 10 },
       { juncture: "Sourcing", tool: "Pin or Juicebox, entry tier", price: "$99-119/mo", chapter: 5 },
       { juncture: "Interview intelligence", tool: "Metaview, free tier", price: "$0", chapter: 7 },
       { juncture: "Reference checks", tool: "Xref, entry pricing", price: "~$70/mo", chapter: 8 },
@@ -54,7 +54,7 @@ const TIERS: BudgetTier[] = [
     range: "$530-620/mo",
     blurb: "Sourcing or screening has become the visible bottleneck and it's time to move past the entry tier: the Chapter 2 mid-tier stack.",
     lines: [
-      { juncture: "Core ATS/CRM", tool: "Recruit CRM Pro or Crelate Business", price: "$95-119/mo", chapter: 9 },
+      { juncture: "Core ATS/CRM", tool: "Recruit CRM Pro or Crelate Business", price: "$95-119/mo", chapter: 10 },
       { juncture: "Sourcing", tool: "Pin Professional or SeekOut Recruit Core", price: "$149-179/mo", chapter: 5 },
       { juncture: "Screening", tool: "Hirevire Professional", price: "$99/mo", chapter: 6 },
       { juncture: "Reference checks", tool: "Xref Growth", price: "$140/mo", chapter: 8 },
@@ -67,7 +67,7 @@ const TIERS: BudgetTier[] = [
     range: "$1,100-1,400/mo",
     blurb: "Multiple recruiters, real applicant volume, and a client base that expects a documented, defensible process at every juncture.",
     lines: [
-      { juncture: "Core ATS/CRM", tool: "Loxo Professional", price: "$199/seat/mo", chapter: 9 },
+      { juncture: "Core ATS/CRM", tool: "Loxo Professional", price: "$199/seat/mo", chapter: 10 },
       { juncture: "Sourcing", tool: "hireEZ or SeekOut, upper tier", price: "~$350/mo", chapter: 5 },
       { juncture: "Screening", tool: "Hirevire Agency", price: "$199/mo", chapter: 6 },
       { juncture: "Reference + background", tool: "Xref Plus + Checkr Complete", price: "~$385/mo", chapter: 8 },
@@ -152,7 +152,7 @@ const StackBuilder = () => {
             <p className="mt-3 text-xs text-muted-foreground">
               Tap any row to jump to that juncture's chapter: tool selection, pricing detail, and the pilot
               walkthrough all live there. This combo is a starting point, not a purchase order: pilot each juncture
-              per Chapter 12 before you commit to anything.
+              per Chapter 13 before you commit to anything.
             </p>
           </motion.div>
         </AnimatePresence>

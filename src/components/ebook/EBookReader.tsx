@@ -13,6 +13,7 @@ import {
   Timer,
   Wrench,
   Shield,
+  TrendingUp,
   Library,
   Lock,
   Download,
@@ -49,6 +50,7 @@ const partIcon: Record<string, React.ReactNode> = {
   "PART 2: QUICK WIN": <Timer className="h-4 w-4" />,
   "PART 3: CORE FUNCTIONS": <Wrench className="h-4 w-4" />,
   "PART 4: GUARDRAILS": <Shield className="h-4 w-4" />,
+  "PART 5: SCALING & OPERATIONS": <TrendingUp className="h-4 w-4" />,
   APPENDIX: <Library className="h-4 w-4" />,
 };
 
