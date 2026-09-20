@@ -152,7 +152,7 @@ const StackBuilder = () => {
             <p className="mt-3 text-xs text-muted-foreground">
               Tap any row to jump to that juncture's chapter — tool selection, pricing detail, and the pilot
               walkthrough all live there. This combo is a starting point, not a purchase order: pilot each juncture
-              per Chapter 13 before you commit to anything.
+              per Chapter 12 before you commit to anything.
             </p>
           </motion.div>
         </AnimatePresence>

@@ -126,6 +126,29 @@
     @apply mt-0;
   }
 
+  /* Segment jump-nav — Build / Launch / Measure / Advanced */
+  .chapter-body .segment-nav {
+    @apply my-6 flex flex-wrap gap-2;
+  }
+  .chapter-body .segment-nav a {
+    @apply rounded-full border border-border bg-secondary/40 px-3.5 py-1.5 font-heading text-xs font-bold uppercase tracking-wide text-foreground no-underline transition-colors hover:bg-secondary hover:text-primary;
+  }
+
+  /* Segment headers within a function chapter */
+  .chapter-body .segment-header {
+    @apply mb-1 mt-14 flex items-center gap-3 border-b-2 border-primary/30 pb-3 first:mt-0;
+    scroll-margin-top: 5rem;
+  }
+  .chapter-body .segment-header .segment-num {
+    @apply flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary font-heading text-sm font-bold text-primary-foreground;
+  }
+  .chapter-body .segment-header h2 {
+    @apply font-serif text-2xl font-semibold text-foreground;
+  }
+  .chapter-body .segment-sub {
+    @apply mb-6 text-sm italic text-muted-foreground;
+  }
+
   /* Stat grid */
   .chapter-body .stat-grid {
     @apply my-6 grid gap-4 sm:grid-cols-3;

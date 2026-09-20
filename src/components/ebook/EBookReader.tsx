@@ -12,8 +12,7 @@ import {
   Sparkles,
   Timer,
   Wrench,
-  Rocket,
-  TrendingUp,
+  Shield,
   Library,
   Lock,
   Download,
@@ -48,9 +47,8 @@ const GATING_ENABLED = Boolean(CHECKOUT_URL);
 const partIcon: Record<string, React.ReactNode> = {
   "PART 1 — WHY & WHAT": <Sparkles className="h-4 w-4" />,
   "PART 2 — QUICK WIN": <Timer className="h-4 w-4" />,
-  "PART 3 — BUILD": <Wrench className="h-4 w-4" />,
-  "PART 4 — LAUNCH": <Rocket className="h-4 w-4" />,
-  "PART 5 — ADVANCED": <TrendingUp className="h-4 w-4" />,
+  "PART 3 — CORE FUNCTIONS": <Wrench className="h-4 w-4" />,
+  "PART 4 — GUARDRAILS": <Shield className="h-4 w-4" />,
   APPENDIX: <Library className="h-4 w-4" />,
 };
 
