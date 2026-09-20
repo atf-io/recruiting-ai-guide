@@ -45,10 +45,10 @@ const FREE_CHAPTER_LIMIT = book.freeChapterLimit;
 const GATING_ENABLED = Boolean(CHECKOUT_URL);
 
 const partIcon: Record<string, React.ReactNode> = {
-  "PART 1 — WHY & WHAT": <Sparkles className="h-4 w-4" />,
-  "PART 2 — QUICK WIN": <Timer className="h-4 w-4" />,
-  "PART 3 — CORE FUNCTIONS": <Wrench className="h-4 w-4" />,
-  "PART 4 — GUARDRAILS": <Shield className="h-4 w-4" />,
+  "PART 1: WHY & WHAT": <Sparkles className="h-4 w-4" />,
+  "PART 2: QUICK WIN": <Timer className="h-4 w-4" />,
+  "PART 3: CORE FUNCTIONS": <Wrench className="h-4 w-4" />,
+  "PART 4: GUARDRAILS": <Shield className="h-4 w-4" />,
   APPENDIX: <Library className="h-4 w-4" />,
 };
 
@@ -154,7 +154,7 @@ const EBookReader = () => {
 
   const openCheckout = useCallback(() => {
     if (!CHECKOUT_URL) {
-      toast("Checkout isn't live yet — check back soon.");
+      toast("Checkout isn't live yet. Check back soon.");
       return;
     }
     window.open(CHECKOUT_URL, "_blank", "noopener,noreferrer");
@@ -396,7 +396,7 @@ const EBookReader = () => {
                 : !GATING_ENABLED || hasPurchased
                 ? "Download Full PDF"
                 : PRICE_DISPLAY
-                ? `Get PDF — $${PRICE_DISPLAY}`
+                ? `Get PDF: $${PRICE_DISPLAY}`
                 : "Get PDF"}
             </button>
             <p className="text-xs text-muted-foreground">Created by Alex Franco</p>
@@ -460,7 +460,7 @@ const EBookReader = () => {
                       {book.title}
                     </h1>
                     <p className="mt-4 text-lg text-[hsl(var(--hero-muted))] md:text-xl">
-                      {book.subtitle} — by {book.author}
+                      {book.subtitle}, by {book.author}
                     </p>
                   </motion.div>
 
@@ -548,7 +548,7 @@ const EBookReader = () => {
                   <div key={group.part} className="mb-12 last:mb-0">
                     <h3 className="mb-4 flex items-center gap-2 font-serif text-lg italic text-primary">
                       {partIcon[group.part]}
-                      {group.part.replace(/^PART \d+ — /, "")}
+                      {group.part.replace(/^PART \d+: /, "")}
                     </h3>
                     <div className="border-t border-border">
                       {group.items.map((ch) => {
@@ -563,7 +563,7 @@ const EBookReader = () => {
                             className="group flex w-full items-baseline gap-4 border-b border-border py-4 text-left transition-colors hover:bg-secondary/30"
                           >
                             <span className="w-9 shrink-0 font-serif text-lg text-muted-foreground/50">
-                              {ch.index === 0 ? "—" : String(ch.index).padStart(2, "0")}
+                              {ch.index === 0 ? "•" : String(ch.index).padStart(2, "0")}
                             </span>
                             <span className="min-w-0 flex-1">
                               <span className="flex items-center gap-2 font-serif text-base text-foreground group-hover:text-primary">
@@ -596,7 +596,7 @@ const EBookReader = () => {
                         <p className="font-heading text-sm font-bold uppercase tracking-widest">Free Updates</p>
                       </div>
                       <p className="mt-3 text-center text-sm text-muted-foreground">
-                        Drop your email for new chapters and tool updates. No spam — unsubscribe anytime.
+                        Drop your email for new chapters and tool updates. No spam, unsubscribe anytime.
                       </p>
                       <form onSubmit={handleEmailSubmit} className="mt-4 flex gap-2">
                         <input
@@ -627,7 +627,7 @@ const EBookReader = () => {
                     viewport={{ once: true }}
                     className="mx-auto mt-16 max-w-xl text-center"
                   >
-                    <p className="text-sm text-muted-foreground">Thanks — you're on the list.</p>
+                    <p className="text-sm text-muted-foreground">Thanks! You're on the list.</p>
                   </motion.div>
                 )}
 
@@ -646,7 +646,7 @@ const EBookReader = () => {
                     <p className="mt-4 text-center text-sm text-muted-foreground leading-relaxed">
                       Alex builds AI-assisted workflows for service businesses, including recruiting agencies
                       evaluating where automation actually pays for itself. This guide distills that evaluation
-                      process — juncture by juncture, with real pricing — into one resource.
+                      process, juncture by juncture, with real pricing, into one resource.
                     </p>
                     <div className="mt-6 flex flex-wrap justify-center gap-3">
                       <a
@@ -656,7 +656,7 @@ const EBookReader = () => {
                         className="inline-flex items-center gap-2 rounded-lg border border-border bg-secondary px-4 py-2 text-xs font-medium text-foreground transition-colors hover:bg-secondary/80"
                       >
                         <ExternalLink className="h-3.5 w-3.5" />
-                        More from Alex — Rivet CSR
+                        More from Alex: Rivet CSR
                       </a>
                     </div>
                   </div>
@@ -723,8 +723,8 @@ const EBookReader = () => {
                 </div>
                 <h3 className="mt-4 font-heading text-xl font-bold text-foreground">Unlock the Full Guide</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  You've been reading the free preview. The remaining {chapters.length - FREE_CHAPTER_LIMIT} chapters —
-                  every juncture's tools, pricing, and rollout steps, plus the downloadable PDF — are part of the paid
+                  You've been reading the free preview. The remaining {chapters.length - FREE_CHAPTER_LIMIT} chapters
+                  (every juncture's tools, pricing, and rollout steps, plus the downloadable PDF) are part of the paid
                   guide.
                 </p>
               </div>
@@ -883,7 +883,7 @@ const EBookReader = () => {
             </p>
             <h1 style={{ fontSize: "36px", fontWeight: 800, margin: 0, color: "#1a1a1a" }}>{book.title}</h1>
             <p style={{ fontSize: "16px", color: "#666", marginTop: "12px" }}>
-              {book.subtitle} — by {book.author}
+              {book.subtitle}, by {book.author}
             </p>
             <hr style={{ margin: "40px auto", width: "60px", border: "none", borderTop: "3px solid #3b82f6" }} />
             <p style={{ fontSize: "13px", color: "#999" }}>{book.tagline}</p>
@@ -900,7 +900,7 @@ const EBookReader = () => {
                 {group.items.map((ch) => (
                   <p key={ch.index} style={{ fontSize: "13px", color: "#333", margin: "4px 0", paddingLeft: "12px" }}>
                     <strong style={{ color: "#111" }}>Chapter {ch.index}.</strong> {ch.title}
-                    {ch.subtitle ? <span style={{ color: "#777" }}> — {ch.subtitle}</span> : null}
+                    {ch.subtitle ? <span style={{ color: "#777" }}>: {ch.subtitle}</span> : null}
                   </p>
                 ))}
               </div>

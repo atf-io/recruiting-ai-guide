@@ -6,9 +6,9 @@ const RIVET_CSR_URL = "https://rivetcsr.com";
 
 const services = [
   { icon: Search, title: "AI-assisted sourcing setup", desc: "Rather have the signal-based sourcing and outbound workflow built for you than piece it together? Rivet CSR configures the automation end to end." },
-  { icon: Bot, title: "Custom AI workflows", desc: "Screening, scheduling, and rediscovery automation tuned to how your desk actually runs — not a generic template." },
+  { icon: Bot, title: "Custom AI workflows", desc: "Screening, scheduling, and rediscovery automation tuned to how your desk actually runs, not a generic template." },
   { icon: Users, title: "ATS / CRM integration", desc: "Live data flowing between your sourcing tools and your system of record. No copy-pasting between tabs." },
-  { icon: BarChart3, title: "Ongoing optimization", desc: "Regular review of reply rates, time-to-shortlist, and placement data — adjustments included." },
+  { icon: BarChart3, title: "Ongoing optimization", desc: "Regular review of reply rates, time-to-shortlist, and placement data, with adjustments included." },
 ];
 
 const About = () => (
@@ -42,7 +42,7 @@ const About = () => (
             </p>
             <p className="mt-3 text-muted-foreground leading-relaxed">
               <strong className="text-foreground">AI Adoption for Recruiting Agencies</strong> maps every stage of the
-              desk — from landing the job order to keeping the client — to where AI actually earns its cost, with
+              desk, from landing the job order to keeping the client, to where AI actually earns its cost, with
               real tool pricing and evidence instead of hype. No chapter is padded with theory you can't act on
               this week.
             </p>

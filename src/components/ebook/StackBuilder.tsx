@@ -29,9 +29,9 @@ const TIERS: BudgetTier[] = [
     blurb: "You're on spreadsheets and want the one system everything else will eventually plug into, without adding real spend yet.",
     lines: [
       { juncture: "Core ATS/CRM", tool: "Manatal Professional", price: "$15-19/mo", chapter: 9 },
-      { juncture: "Sourcing", tool: "Juicebox — free tier", price: "$0", chapter: 5 },
+      { juncture: "Sourcing", tool: "Juicebox, free tier", price: "$0", chapter: 5 },
       { juncture: "Business development", tool: "Claude + manual search", price: "$0", chapter: 4 },
-      { juncture: "Interview intelligence", tool: "Metaview — free tier", price: "$0", chapter: 7 },
+      { juncture: "Interview intelligence", tool: "Metaview, free tier", price: "$0", chapter: 7 },
       { juncture: "Reference checks", tool: "Manual", price: "$0", chapter: 8 },
     ],
   },
@@ -39,11 +39,11 @@ const TIERS: BudgetTier[] = [
     id: "lean",
     label: "Lean",
     range: "$185-260/mo",
-    blurb: "The budget tier from Chapter 2 — a full juncture-by-juncture stack for a single-recruiter desk, still under the cost of a fraction of one placement fee.",
+    blurb: "The budget tier from Chapter 2: a full juncture-by-juncture stack for a single-recruiter desk, still under the cost of a fraction of one placement fee.",
     lines: [
       { juncture: "Core ATS/CRM", tool: "Manatal Professional", price: "$15-19/mo", chapter: 9 },
       { juncture: "Sourcing", tool: "Pin or Juicebox, entry tier", price: "$99-119/mo", chapter: 5 },
-      { juncture: "Interview intelligence", tool: "Metaview — free tier", price: "$0", chapter: 7 },
+      { juncture: "Interview intelligence", tool: "Metaview, free tier", price: "$0", chapter: 7 },
       { juncture: "Reference checks", tool: "Xref, entry pricing", price: "~$70/mo", chapter: 8 },
       { juncture: "Business development", tool: "Claude + manual search", price: "$0", chapter: 4 },
     ],
@@ -52,7 +52,7 @@ const TIERS: BudgetTier[] = [
     id: "growing",
     label: "Growing",
     range: "$530-620/mo",
-    blurb: "Sourcing or screening has become the visible bottleneck and it's time to move past the entry tier — the Chapter 2 mid-tier stack.",
+    blurb: "Sourcing or screening has become the visible bottleneck and it's time to move past the entry tier: the Chapter 2 mid-tier stack.",
     lines: [
       { juncture: "Core ATS/CRM", tool: "Recruit CRM Pro or Crelate Business", price: "$95-119/mo", chapter: 9 },
       { juncture: "Sourcing", tool: "Pin Professional or SeekOut Recruit Core", price: "$149-179/mo", chapter: 5 },
@@ -90,8 +90,8 @@ const StackBuilder = () => {
           <p className="font-heading text-sm font-bold uppercase tracking-widest">Build Your Stack</p>
         </div>
         <p className="mt-3 text-center text-sm text-muted-foreground">
-          Pick a monthly budget. Every price below is the same figure used throughout this guide — this just
-          assembles them into one recommended combo instead of leaving that to you.
+          Pick a monthly budget. Every price below is the same figure used throughout this guide, just
+          assembled into one recommended combo instead of leaving that to you.
         </p>
 
         <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -150,7 +150,7 @@ const StackBuilder = () => {
             </div>
 
             <p className="mt-3 text-xs text-muted-foreground">
-              Tap any row to jump to that juncture's chapter — tool selection, pricing detail, and the pilot
+              Tap any row to jump to that juncture's chapter: tool selection, pricing detail, and the pilot
               walkthrough all live there. This combo is a starting point, not a purchase order: pilot each juncture
               per Chapter 12 before you commit to anything.
             </p>
