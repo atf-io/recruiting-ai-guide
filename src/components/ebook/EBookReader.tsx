@@ -452,18 +452,16 @@ const EBookReader = () => {
               transition={{ duration: 0.4 }}
             >
               {/* Hero / Cover */}
-              <div className="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden px-6 text-center">
-                <div className="absolute inset-0 bg-gradient-hero" />
-
+              <div className="relative flex min-h-[80vh] flex-col items-center justify-center overflow-hidden bg-[hsl(var(--hero-bg))] px-6 py-24 text-center">
                 <div className="relative z-10 max-w-3xl">
                   <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-                    <p className="font-heading text-xs font-bold uppercase tracking-[0.3em] text-primary">
+                    <p className="font-heading text-xs font-bold uppercase tracking-[0.3em] text-[hsl(var(--hero-eyebrow))]">
                       For Boutique & Independent Recruiting Agencies
                     </p>
-                    <h1 className="mt-4 font-heading text-4xl font-bold leading-tight text-foreground md:text-5xl lg:text-6xl">
+                    <h1 className="mt-4 font-serif text-4xl font-semibold italic leading-tight text-[hsl(var(--hero-foreground))] md:text-5xl lg:text-6xl">
                       {book.title}
                     </h1>
-                    <p className="mt-4 text-lg text-foreground/70 md:text-xl">
+                    <p className="mt-4 text-lg text-[hsl(var(--hero-muted))] md:text-xl">
                       {book.subtitle} — by {book.author}
                     </p>
                   </motion.div>
@@ -475,7 +473,7 @@ const EBookReader = () => {
                     className="mt-8 flex flex-wrap justify-center gap-2"
                   >
                     {["Contingent Placement", "Retained Search", "Embedded / Fractional Recruiting"].map((s) => (
-                      <span key={s} className="rounded-full border border-border bg-card px-4 py-1.5 text-xs font-medium text-foreground/60">
+                      <span key={s} className="rounded-full border border-[hsl(var(--hero-muted))]/30 bg-white/5 px-4 py-1.5 text-xs font-medium text-[hsl(var(--hero-muted))]">
                         {s}
                       </span>
                     ))}
@@ -485,7 +483,7 @@ const EBookReader = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.5 }}
-                    className="mt-8 rounded-xl border border-primary/30 bg-card px-6 py-4"
+                    className="mt-8 rounded-xl border border-primary/40 bg-white/5 px-6 py-4"
                   >
                     <p className="font-heading text-sm font-bold text-primary md:text-base">{book.tagline}</p>
                   </motion.div>
@@ -515,7 +513,7 @@ const EBookReader = () => {
                     )}
                     <button
                       onClick={() => goToChapter(0)}
-                      className="inline-flex items-center gap-2 rounded-xl border border-primary/30 bg-primary/5 px-6 py-3.5 font-heading text-sm font-bold text-primary transition-all hover:bg-primary/10"
+                      className="inline-flex items-center gap-2 rounded-xl border border-[hsl(var(--hero-muted))]/30 bg-white/5 px-6 py-3.5 font-heading text-sm font-bold text-[hsl(var(--hero-foreground))] transition-all hover:bg-white/10"
                     >
                       <BookOpen className="h-4 w-4" />
                       Read {FREE_CHAPTER_LIMIT} Chapters Free
@@ -526,7 +524,7 @@ const EBookReader = () => {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.8, delay: 0.9 }}
-                      className="mt-4 text-xs text-muted-foreground"
+                      className="mt-4 text-xs text-[hsl(var(--hero-muted))]"
                     >
                       One-time payment · Instant access · {chapters.length} chapters · PDF included
                     </motion.p>
@@ -539,40 +537,46 @@ const EBookReader = () => {
                 <StackBuilder />
               </div>
 
-              {/* Chapter grid, grouped by part */}
-              <div className="mx-auto max-w-5xl px-6 pb-20 mt-16">
-                <h2 className="mb-8 text-center font-heading text-2xl font-bold text-foreground">What's Inside</h2>
+              {/* Contents, grouped by part */}
+              <div className="mx-auto max-w-3xl px-6 pb-20 mt-16">
+                <p className="mb-2 text-center font-heading text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">
+                  Contents
+                </p>
+                <h2 className="mb-12 text-center font-serif text-3xl font-semibold italic text-foreground">
+                  What's Inside
+                </h2>
 
                 {partGroups.map((group) => (
-                  <div key={group.part}>
-                    <h3 className="mb-4 mt-12 flex items-center justify-center gap-2 text-center font-heading text-lg font-bold text-muted-foreground first:mt-0">
+                  <div key={group.part} className="mb-12 last:mb-0">
+                    <h3 className="mb-4 flex items-center gap-2 font-serif text-lg italic text-primary">
                       {partIcon[group.part]}
                       {group.part.replace(/^PART \d+ — /, "")}
                     </h3>
-                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    <div className="border-t border-border">
                       {group.items.map((ch) => {
                         const locked = isChapterLocked(ch.index);
                         return (
                           <motion.button
                             key={ch.index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             onClick={() => goToChapter(ch.index)}
-                            className="group rounded-xl border border-border bg-card p-5 text-left transition-all hover:border-primary/30 hover:bg-secondary/50 ebook-glow-sm"
+                            className="group flex w-full items-baseline gap-4 border-b border-border py-4 text-left transition-colors hover:bg-secondary/30"
                           >
-                            <div className="flex items-center gap-3">
-                              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                                {locked ? <Lock className="h-4 w-4" /> : partIcon[group.part]}
+                            <span className="w-9 shrink-0 font-serif text-lg text-muted-foreground/50">
+                              {ch.index === 0 ? "—" : String(ch.index).padStart(2, "0")}
+                            </span>
+                            <span className="min-w-0 flex-1">
+                              <span className="flex items-center gap-2 font-serif text-base text-foreground group-hover:text-primary">
+                                {ch.title}
+                                {locked && <Lock className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />}
                               </span>
-                              <span className="font-heading text-xs font-bold text-muted-foreground">
-                                {ch.index === 0 ? "INTRO" : `CH. ${ch.index}`}
-                              </span>
-                            </div>
-                            <h3 className="mt-3 font-heading text-sm font-bold text-foreground group-hover:text-primary">
-                              {ch.title}
-                            </h3>
-                            {ch.subtitle && <p className="mt-1 text-xs text-muted-foreground">{ch.subtitle}</p>}
+                              {ch.subtitle && (
+                                <span className="mt-0.5 block text-xs text-muted-foreground">{ch.subtitle}</span>
+                              )}
+                            </span>
+                            <ChevronRight className="h-4 w-4 shrink-0 self-center text-muted-foreground/40 transition-transform group-hover:translate-x-1 group-hover:text-primary" />
                           </motion.button>
                         );
                       })}
@@ -640,7 +644,7 @@ const EBookReader = () => {
                     <p className="text-center font-heading text-xs font-bold uppercase tracking-widest text-muted-foreground">
                       About the Author
                     </p>
-                    <h3 className="mt-3 text-center font-heading text-2xl font-bold text-foreground">Alex Franco</h3>
+                    <h3 className="mt-3 text-center font-serif text-2xl font-semibold italic text-foreground">Alex Franco</h3>
                     <p className="mt-4 text-center text-sm text-muted-foreground leading-relaxed">
                       Alex builds AI-assisted workflows for service businesses, including recruiting agencies
                       evaluating where automation actually pays for itself. This guide distills that evaluation

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,53 +6,60 @@
 
 @layer base {
   :root {
-    --background: 0 0% 90%;
-    --foreground: 0 0% 15%;
+    /* Editorial palette — deep forest hero, warm cream body, amber accent */
+    --background: 42 35% 94%;
+    --foreground: 150 18% 12%;
 
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 15%;
+    --card: 40 30% 97%;
+    --card-foreground: 150 18% 12%;
 
-    --popover: 0 0% 96%;
-    --popover-foreground: 0 0% 20%;
+    --popover: 40 30% 97%;
+    --popover-foreground: 150 18% 12%;
 
-    --primary: 210 100% 56%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 35 68% 58%;
+    --primary-foreground: 150 22% 10%;
 
-    --secondary: 0 0% 85%;
-    --secondary-foreground: 0 0% 25%;
+    --secondary: 40 20% 89%;
+    --secondary-foreground: 150 15% 20%;
 
-    --muted: 0 0% 88%;
-    --muted-foreground: 0 0% 30%;
+    --muted: 40 18% 90%;
+    --muted-foreground: 150 8% 38%;
 
-    --accent: 170 80% 45%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 150 22% 14%;
+    --accent-foreground: 42 30% 96%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 6 70% 48%;
+    --destructive-foreground: 40 30% 96%;
 
-    --border: 0 0% 80%;
-    --input: 0 0% 80%;
-    --ring: 210 100% 56%;
+    --border: 40 15% 83%;
+    --input: 40 15% 83%;
+    --ring: 35 68% 58%;
 
-    --radius: 0.75rem;
+    --radius: 0.6rem;
+
+    /* Dark hero band — cover only, not the global background */
+    --hero-bg: 150 26% 8%;
+    --hero-foreground: 42 30% 94%;
+    --hero-muted: 150 8% 58%;
+    --hero-eyebrow: 35 68% 62%;
 
     /* eBook specific tokens */
-    --ebook-glow: 210 100% 56%;
-    --ebook-surface: 0 0% 93%;
-    --ebook-surface-hover: 0 0% 88%;
-    --ebook-stat-bg: 210 100% 56%;
-    --ebook-warning: 38 92% 50%;
-    --ebook-success: 152 69% 40%;
-    --ebook-chapter-accent: 270 60% 60%;
+    --ebook-glow: 35 68% 58%;
+    --ebook-surface: 40 25% 91%;
+    --ebook-surface-hover: 40 22% 87%;
+    --ebook-stat-bg: 35 68% 58%;
+    --ebook-warning: 28 78% 50%;
+    --ebook-success: 150 40% 32%;
+    --ebook-chapter-accent: 150 22% 14%;
 
-    --sidebar-background: 0 0% 97%;
-    --sidebar-foreground: 0 0% 15%;
-    --sidebar-primary: 210 100% 56%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 92%;
-    --sidebar-accent-foreground: 0 0% 15%;
-    --sidebar-border: 0 0% 75%;
-    --sidebar-ring: 210 100% 56%;
+    --sidebar-background: 40 28% 96%;
+    --sidebar-foreground: 150 18% 15%;
+    --sidebar-primary: 35 68% 58%;
+    --sidebar-primary-foreground: 150 22% 10%;
+    --sidebar-accent: 40 20% 90%;
+    --sidebar-accent-foreground: 150 18% 15%;
+    --sidebar-border: 40 15% 85%;
+    --sidebar-ring: 35 68% 58%;
   }
 }
 
@@ -66,7 +73,7 @@
   }
 
   ::selection {
-    background: hsl(210 100% 56% / 0.3);
+    background: hsl(35 68% 58% / 0.3);
   }
 
   ::-webkit-scrollbar {
