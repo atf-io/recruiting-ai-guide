@@ -2,7 +2,7 @@
 
 A paid digital guide for boutique and independent recruiting agencies — where to add AI across the agency workflow, what it costs, and what it's worth. Second product under the **Digital Bound** brand (same brand/author as [digital-bound](https://github.com/atf-io/digital-bound), the AI Voice Agents guide), shipped as its own repo/app rather than a shared codebase.
 
-20 chapters across 5 parts + an appendix, with the first 4 (all of Part 1 plus the Day 1 Quick Start) free to read.
+21 chapters across 5 parts + an appendix (including a Prompt Library of copy-paste Claude prompts, scorecard/disclosure templates, and worksheets), with the first 4 (all of Part 1 plus the Day 1 Quick Start) free to read.
 
 ## Stack
 
